@@ -1,0 +1,137 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  flex-shrink: 0;
+  background: rgba(15, 23, 42, 0.85); /* Slightly transparent dark */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem;
+  z-index: 10;
+  position: relative;
+  /* Glowing line effect on the right border */
+  box-shadow: 1px 0 15px rgba(59, 130, 246, 0.1);
+  overflow: hidden; /* Prevent scrolling strictly in sidebar */
+}
+
+/* Background elements for the sidebar */
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Main content styling */
+.main-content {
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+  /* Add padding to the whole scrollable area */
+  padding: 0;
+}
+
+/* Background gradient orbs for main content area to give premium feel */
+.main-content::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(60px);
+}
+
+.main-content::after {
+  content: '';
+  position: fixed;
+  bottom: -20%;
+  left: calc(var(--sidebar-width) + 10%);
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(60px);
+}
+
+/* General Layout helpers */
+.section-container {
+  min-height: 100vh; /* Make each section at least full screen height */
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Responsive considerations - though main focus is double pane for desktop */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 260px;
+  }
+  .section-container {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 0; /* Handled by sidebar inner styles now */
+    height: auto;
+    flex-direction: column;
+  }
+  .main-content {
+    overflow-x: hidden;
+  }
+  .section-container {
+    min-height: auto;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --timeline-offset: -8px;
+  }
+  
+  .education-icon-container {
+    transform: scale(0.8);
+  }
+}
