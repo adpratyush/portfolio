@@ -1,7 +1,7 @@
 import React from 'react';
 import resort from '../../assets/resort.png';
 import food from '../../assets/food.png';
-import mycart from '../../assets/mycart.png';
+import message from '../../assets/message.png';
 import { ExternalLink, Github } from 'lucide-react';
 
 // ✅ Project Card Component
@@ -179,8 +179,8 @@ const Projects = () => {
         {/* Project 3 */}
         <ProjectCard
           title="Messaging App"
-          description="**Kura** is a modern messaging application designed to make communication simple, fast, and convenient. It allows users to send real-time messages, share photos, communicate through private chats, and interact in group conversations. Built with a focus on seamless communication and a user-friendly experience, Kura provides a reliable platform for connecting with friends, family, and communities anytime, anywhere."
-          image={mycart}
+          description="Kura is a real-time messaging application that enables users to connect through private and group chats. It supports instant messaging, photo sharing, and seamless communication through a simple and user-friendly interface."
+          image={message}
           imageColor="#10B981"
           tags={['Next.js', 'React', 'Express', 'Node JS', 'MongoDB', 'PostgreSQL']}
           liveLink="https://kura-khaki.vercel.app"
