@@ -161,7 +161,7 @@ const Projects = () => {
           image={resort}
           imageColor="var(--accent-primary)"
           tags={['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL', 'Stripe', 'ESEWA']}
-          liveLink="#"
+          liveLink="https://snowpal.com.np"
           githubLink="https://github.com/adpratyush/Resort"
         />
 
@@ -178,13 +178,13 @@ const Projects = () => {
 
         {/* Project 3 */}
         <ProjectCard
-          title="Pizza Shop"
-          description="The pizza delivery system utilizes the MERN stack along with Razorpay for streamlined payment transactions. Offering a user-centric interface, customers can customize pizza orders, track deliveries in real-time, and enjoy secure payment options."
+          title="Messaging App"
+          description="**Kura** is a modern messaging application designed to make communication simple, fast, and convenient. It allows users to send real-time messages, share photos, communicate through private chats, and interact in group conversations. Built with a focus on seamless communication and a user-friendly experience, Kura provides a reliable platform for connecting with friends, family, and communities anytime, anywhere."
           image={mycart}
           imageColor="#10B981"
           tags={['Next.js', 'React', 'Express', 'Node JS', 'MongoDB', 'PostgreSQL']}
-          liveLink="#"
-          githubLink="https://github.com/adpratyush/pizzaDelivery"
+          liveLink="https://kura-khaki.vercel.app"
+          githubLink="https://github.com/adpratyush/kura"
         />
 
       </div>
